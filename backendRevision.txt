@@ -1,0 +1,127 @@
+Backend Interview Questions:-
+
+1. What is Caching? How can you save money with Caching?
+A. Caching is the process of storing copies of files in a cache, or temporary storage location, so that they can be accessed more quickly. Technically, a cache is any temporary storage location for copies of files or data, but the term is often used in reference to Internet technologies. Web browsers cache HTML files, JavaScript, and images in order to load websites more quickly, while DNS servers cache DNS records for faster lookups and CDN servers cache content to reduce latency.
+Cache servers can unload the burden on networks by creating copies of frequently visited sites and downloaded files at a local level.
+VSAT users can benefit from reduced bandwidth usage – reducing costs and improving the end-user experience.
+Prices for cache servers have plummeted in recent years, due to falling hardware and memory costs.
+
+
+2. What is load balancing?
+A. Load balancing refers to efficiently distributing incoming network traffic across a group of backend servers, also known as a server farm or server pool.
+Modern high‑traffic websites must serve hundreds of thousands, if not millions, of concurrent requests from users or clients and return the correct text, images, video, or application data, all in a fast and reliable manner. To cost‑effectively scale to meet these high volumes, modern computing best practice generally requires adding more servers.
+A load balancer acts as the “traffic cop” sitting in front of your servers and routing client requests across all servers capable of fulfilling those requests in a manner that maximizes speed and capacity utilization and ensures that no one server is overworked, which could degrade performance. If a single server goes down, the load balancer redirects traffic to the remaining online servers. When a new server is added to the server group, the load balancer automatically starts to send requests to it.
+In this manner, a load balancer performs the following functions:
+Distributes client requests or network load efficiently across multiple servers
+Ensures high availability and reliability by sending requests only to servers that are online
+Provides the flexibility to add or subtract servers as demand dictates
+
+
+3. What is CAP Theorem?
+A. The CAP theorem states that it is not possible to guarantee all three of the desirable properties – consistency, availability, and partition tolerance at the same time in a distributed system with data replication. 
+Consistency        : Every read receives the most recent write or an error
+Availability       : Every request receives a (non-error) response, without the guarantee that it contains the most recent write
+Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
+- When a network partition failure happens should we decide to
+	- Cancel the operation and thus decrease the availability but ensure consistency
+	- Proceed with the operation and thus provide availability but risk inconsistency
+
+
+4. What is PACELC Theorem?
+A. The PACELC theorem states that in a system that replicates data:
+if there is a partition (‘P’), a distributed system can tradeoff between availability and consistency (i.e., ‘A’ and ‘C’);
+else (‘E’), when the system is running normally in the absence of partitions, the system can tradeoff between latency (‘L’) and consistency (‘C’).
+
+
+5. What is Eventual Consistency?
+A. Eventual Consistency is a guarantee that when an update is made in a distributed database, that update will eventually be reflected in all nodes that store the data, resulting in the same response every time the data is queried.
+Consistency refers to a database query returning the same data each time the same request is made. Strong consistency means the latest data is returned, but, due to internal consistency methods, it may result with higher latency or delay. With eventual consistency, results are less consistent early on, but they are provided much faster with low latency. Early results of eventual consistency data queries may not have the most recent updates because it takes time for updates to reach replicas across a database cluster.
+
+
+6. What is Strong Consistency?
+A. Strong Consistency simply means the data must be strongly consistent at all times. All the server nodes across the world should contain the same value as an entity at any point in time. And the only way to implement this behavior is by locking down the nodes when being updated.
+
+
+7. What are the different types of databases?
+A. Relational databases
+NoSQL databases
+Cloud databases
+Columnar databases
+Wide column databases
+Object-oriented databases
+Key-value databases
+Hierarchical databases
+
+
+8. What are message queues?
+A. A message queue is a software engineering component used for communication between processes or between threads within the same process. Message queues provide an asynchronous communication protocol in which the sender and receiver of messages don't need to interact at the same time - messages are held in queue until the recipient retrieves them.
+Message queues are used within operating systems or applications as a way for programs to communicate with one another. They may also be used to pass messages between computer systems.
+
+
+9. Which service by Amazon Web Services (AWS) can you use for Queues?
+A. Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables us to decouple and scale microservices, distributed systems, and serverless applications.
+
+
+10. What is Pub Sub ?
+A. Publish/subscribe messaging, or pub/sub messaging, is a form of asynchronous service-to-service communication used in serverless and microservices architectures. In a pub/sub model, any message published to a topic is immediately received by all of the subscribers to the topic.
+
+
+11. How do you go about sending a million emails? What are the steps you will take to ensure system is stable, and will end up with lesser failures?
+
+
+12. What are webhooks?
+A.  Webhooks are basically user defined HTTP callbacks (or small code snippets linked to a web application) which are triggered by specific events.
+Webhooks are automated messages sent from apps when something happens. They have a message—or payload—and are sent to a unique URL—essentially the app's phone number or address. Webhooks are almost always faster than polling, and require less work on your end.
+
+
+13. What is Docker? Why do we use it?
+A. Docker is an open source containerization platform. It enables developers to package applications into containers—standardized executable components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment.
+i. Consistent & Isolated Environment
+The very first advantage of Docker is that it provides you with a consistent and isolated environment. It takes the responsibility of isolating and segregating your apps and resources in such a way that each container becomes able to access all the required resources in an isolated manner i.e., without disturbing or depending on another container.
+ii. Rapid Application Deployment
+Docker indeed fastens the application deployment process to a greater extent. It efficiently organizes the entire development lifecycle by providing a standardized working environment to the developers. You need to know that Docker creates a container for every individual process and subsequently the Docker apps do not boot into an OS – that saves a lot of time. 
+iii. Ensures Scalability & Flexibility
+Docker leverages you with the utmost level of scalability and flexibility. Due to the consistent environment – the Docker images can be easily sorted across multiple servers. For instance, if you’re required to do an upgrade during the release of the application – you can conveniently do the changes in Docker containers, can test them & roll out new containers. 
+iv. Cost-Effective
+As Docker reduces the need for more infrastructure resources for development and the container created for individual processes can be shared with other apps with instances of these containerized apps using less memory compared to virtual machines – it makes the development and deployment process more cost-effective.
+
+
+14. What is S3 Service in AWS?
+A. Amazon S3 (Simple Storage Service) provides object storage, which is built for storing and recovering any amount of information or data from anywhere over the internet. It provides this storage through a web services interface. While designed for developers for easier web-scale computing, it provides 99.999999999 percent durability and 99.99 percent availability of objects. It can also store computer files up to 5 terabytes in size.
+Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance. Customers of all sizes and industries can store and protect any amount of data for virtually any use case, such as data lakes, cloud-native applications, and mobile apps. With cost-effective storage classes and easy-to-use management features, you can optimize costs, organize data, and configure fine-tuned access controls to meet specific business, organizational, and compliance requirements.
+
+
+15. What is EC2 Instance in AWS?
+A. An Amazon EC2 instance is a virtual server in Amazon's Elastic Compute Cloud (EC2) for running applications on the Amazon Web Services (AWS) infrastructure. 
+To begin with, ec2 stands for Amazon Elastic Compute Cloud. Amazon Ec2 is a basic virtual machine with customizable hardware components and an OS. The system allows you to run various virtual computers and manage the same with a single hardware.
+Elastic Compute Cloud is the highly used and primary service system in the massive AWS ecosystem. The cloud system provides multiple features, for instance, it facilitates computing on-demand and scales the Computing capacity in the Amazon cloud system.
+
+
+16. What is Cloudfront in AWS?
+A. Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as . html, . css, . js, and image files, to your users. CloudFront delivers your content through a worldwide network of data centers called edge locations.
+
+
+17. What is Route 53 In AWS?
+A. Amazon Route 53, part of the Amazon Web Services (AWS) cloud computing platform from Amazon.com normally referred to as AWS Route 53, is a highly available, scalable Domain Name System (DNS) service. Released in 2010, its name refers to both the classic highway US Route 66 and the destination for DNS server requests: TCP or UDP port 53.
+AWS Route 53 translates URL names, such as www.wordpress.com, into their corresponding numeric IP addresses—in this example, 198.143.164.252. In this way, AWS Route 53 simplifies how cloud architecture routes users to internet applications.
+
+
+18. What are ELBs in AWS?
+A. Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets and virtual appliances in one or more Availability Zones (AZs).
+
+
+19. What is TLS?
+A. Transport Layer Security, or TLS, is a widely adopted security protocol designed to facilitate privacy and data security for communications over the Internet. A primary use case of TLS is encrypting the communication between web applications and servers, such as web browsers loading a website. TLS can also be used to encrypt other communications such as email, messaging, and voice over IP (VoIP). 
+
+
+20. What is the difference HTTPS vs HTTP?
+A. In HTTP, URL begins with “http://” whereas URL starts with “https://”
+HTTP uses port number 80 for communication and HTTPS uses 443
+HTTP is considered to be unsecure and HTTPS is secure
+HTTP Works at Application Layer and HTTPS works at Transport Layer
+In HTTP, Encryption is absent and Encryption is present in HTTPS 
+HTTP does not require any certificates and HTTPS needs SSL Certificates
+
+
+21. What is a reverse proxy?
+A. A reverse proxy is a server that sits in front of web servers and forwards client (e.g. web browser) requests to those web servers. Reverse proxies are typically implemented to help increase security, performance, and reliability. 
